@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cripto Previsão</title>
+  <meta name="description" content="Preços de criptomoedas ao vivo, gráficos com indicadores, projeção estatística, carteira e alertas.">
+  <meta name="theme-color" content="#111110">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="icons/icon.svg" alt="" width="28" height="28">
+      <h1>Cripto</h1>
+    </div>
+    <div class="top-actions">
+      <div class="seg" role="group" aria-label="Moeda">
+        <button type="button" data-cur="brl" aria-pressed="true">R$</button>
+        <button type="button" data-cur="usd" aria-pressed="false">US$</button>
+      </div>
+      <button type="button" id="refresh" class="ghost" title="Atualizar agora">Atualizar</button>
+    </div>
+  </header>
+  <p id="status" class="status" role="status">Carregando preços…</p>
+
+  <main>
+    <section class="card" aria-labelledby="h-market">
+      <div class="card-head">
+        <h2 id="h-market">Mercado</h2>
+        <span class="muted small" id="updated"></span>
+      </div>
+      <div class="table-wrap">
+        <table class="market">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Moeda</th>
+              <th scope="col" class="num">Preço</th>
+              <th scope="col" class="num">24h</th>
+              <th scope="col" class="num">7d</th>
+              <th scope="col" class="num">30d</th>
+              <th scope="col" class="num hide-sm">Valor de mercado</th>
+            </tr>
+          </thead>
+          <tbody id="market-body"></tbody>
+        </table>
+      </div>
+      <button type="button" id="more" class="link">Mostrar top 20</button>
+    </section>
+
+    <section class="card" aria-labelledby="h-analysis">
+      <div class="card-head">
+        <h2 id="h-analysis">Análise e previsão</h2>
+        <select id="coin-select" aria-label="Moeda analisada"></select>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Período do gráfico" id="range">
+          <button type="button" data-days="30" aria-pressed="false">30d</button>
+          <button type="button" data-days="90" aria-pressed="true">90d</button>
+          <button type="button" data-days="180" aria-pressed="false">180d</button>
+          <button type="button" data-days="365" aria-pressed="false">1a</button>
+        </div>
+        <div class="seg" role="group" aria-label="Horizonte da previsão" id="horizon">
+          <button type="button" data-h="7" aria-pressed="false">7 dias</button>
+          <button type="button" data-h="14" aria-pressed="true">14 dias</button>
+          <button type="button" data-h="30" aria-pressed="false">30 dias</button>
+        </div>
+      </div>
+
+      <div class="tiles" id="tiles"></div>
+
+      <div class="legend" id="legend" aria-hidden="true">
+        <span><i class="key line s1"></i>Preço</span>
+        <span><i class="key line s2"></i>Média 7d</span>
+        <span><i class="key line s3"></i>Média 30d</span>
+        <span><i class="key band"></i>Faixa provável (80%)</span>
+        <span><i class="key dash"></i>Projeção central</span>
+      </div>
+      <div class="chart" id="price-chart"></div>
+      <h3 class="sub">RSI (14)</h3>
+      <div class="chart small-chart" id="rsi-chart"></div>
+      <p class="muted small" id="signal-text"></p>
+      <details class="method">
+        <summary>Como a previsão é calculada</summary>
+        <p>A projeção usa os retornos diários dos últimos 90 dias. A <b>volatilidade</b> define a largura da faixa
+          (80% de probabilidade, se o comportamento recente se repetir). A <b>tendência</b> é metade da inclinação
+          dos últimos 30 dias — reduzida de propósito, porque tendências passadas raramente continuam inteiras.</p>
+        <p>A tendência resumida combina médias móveis (7 e 30 dias), RSI e o retorno de 30 dias.
+          É uma estimativa estatística, <b>não é recomendação de investimento</b>: notícias, juros e
+          regulação mudam o preço de formas que nenhum modelo prevê.</p>
+      </details>
+    </section>
+
+    <section class="card" aria-labelledby="h-wallet">
+      <div class="card-head">
+        <h2 id="h-wallet">Carteira</h2>
+        <span class="muted small">Salva só neste navegador</span>
+      </div>
+      <form id="wallet-form" class="form-row">
+        <label>Moeda <select name="coin" required></select></label>
+        <label>Quantidade <input name="qty" type="number" step="any" min="0" required inputmode="decimal" placeholder="0,5"></label>
+        <label>Preço médio pago <input name="cost" type="number" step="any" min="0" inputmode="decimal" placeholder="opcional"></label>
+        <button type="submit">Adicionar</button>
+      </form>
+      <div class="tiles" id="wallet-tiles"></div>
+      <div class="table-wrap">
+        <table class="wallet">
+          <thead>
+            <tr>
+              <th scope="col">Moeda</th>
+              <th scope="col" class="num">Quantidade</th>
+              <th scope="col" class="num">Valor</th>
+              <th scope="col" class="num">Resultado</th>
+              <th scope="col"><span class="sr">Remover</span></th>
+            </tr>
+          </thead>
+          <tbody id="wallet-body"></tbody>
+        </table>
+      </div>
+      <p class="muted small" id="wallet-empty">Nenhuma moeda na carteira ainda.</p>
+    </section>
+
+    <section class="card" aria-labelledby="h-alerts">
+      <div class="card-head">
+        <h2 id="h-alerts">Alertas de preço</h2>
+        <span class="muted small">Verificados a cada minuto com a página aberta</span>
+      </div>
+      <form id="alert-form" class="form-row">
+        <label>Moeda <select name="coin" required></select></label>
+        <label>Quando o preço
+          <select name="dir"><option value="above">subir acima de</option><option value="below">cair abaixo de</option></select>
+        </label>
+        <label>Valor <input name="price" type="number" step="any" min="0" required inputmode="decimal"></label>
+        <button type="submit">Criar alerta</button>
+      </form>
+      <ul class="alerts" id="alert-list"></ul>
+      <p class="muted small" id="alert-empty">Nenhum alerta criado.</p>
+    </section>
+  </main>
+
+  <footer class="muted small">
+    Dados: <a href="https://www.coingecko.com/" rel="noopener" target="_blank">CoinGecko</a>.
+    Não é recomendação de investimento.
+  </footer>
+
+  <div id="toasts" class="toasts" aria-live="assertive"></div>
+  <div id="tooltip" class="tooltip" hidden></div>
+</body>
+</html>
