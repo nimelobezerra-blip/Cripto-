@@ -3,8 +3,8 @@
   "short_name": "Cripto",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#111110",
-  "theme_color": "#111110",
+  "background_color": "#0c0d12",
+  "theme_color": "#0c0d12",
   "icons": [
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
     { "src": "icons/icon-180.png", "sizes": "180x180", "type": "image/png" },

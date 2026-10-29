@@ -4,148 +4,218 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cripto Previsão</title>
-  <meta name="description" content="Preços de criptomoedas ao vivo, gráficos com indicadores, projeção estatística, carteira e alertas.">
-  <meta name="theme-color" content="#111110">
+  <meta name="description" content="Preços de criptomoedas ao vivo em R$, US$ e €, gráficos com indicadores, previsão estatística, carteira, alertas e conversor.">
+  <meta name="theme-color" content="#0c0d12">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="top">
-    <div class="brand">
-      <img src="icons/icon.svg" alt="" width="28" height="28">
-      <h1>Cripto</h1>
-    </div>
-    <div class="top-actions">
-      <div class="seg" role="group" aria-label="Moeda">
-        <button type="button" data-cur="brl" aria-pressed="true">R$</button>
-        <button type="button" data-cur="usd" aria-pressed="false">US$</button>
+    <div class="top-inner">
+      <a class="brand" href="#inicio" aria-label="Cripto, início">
+        <img src="icons/icon.svg" alt="" width="30" height="30">
+        <span>Cripto</span>
+      </a>
+      <nav class="nav" aria-label="Seções">
+        <a href="#mercado">Mercado</a>
+        <a href="#analise">Análise</a>
+        <a href="#carteira">Carteira</a>
+        <a href="#alertas">Alertas</a>
+        <a href="#conversor">Conversor</a>
+      </nav>
+      <div class="top-actions">
+        <div class="seg" role="group" aria-label="Moeda de exibição" id="cur-seg">
+          <button type="button" data-cur="brl" aria-pressed="false">R$</button>
+          <button type="button" data-cur="usd" aria-pressed="false">US$</button>
+          <button type="button" data-cur="eur" aria-pressed="false">€</button>
+        </div>
+        <button type="button" id="theme" class="icon-btn" aria-label="Tema: automático" title="Tema">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+        <button type="button" id="refresh" class="icon-btn" aria-label="Atualizar agora" title="Atualizar agora">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        </button>
       </div>
-      <button type="button" id="refresh" class="ghost" title="Atualizar agora">Atualizar</button>
     </div>
   </header>
-  <p id="status" class="status" role="status">Carregando preços…</p>
 
-  <main>
-    <section class="card" aria-labelledby="h-market">
+  <main id="inicio">
+    <section class="hero" aria-labelledby="h-overview">
+      <div class="hero-head">
+        <div>
+          <h1 id="h-overview">Mercado cripto hoje</h1>
+          <p class="muted" id="status" role="status">Carregando preços…</p>
+        </div>
+      </div>
+      <div class="stats" id="overview"></div>
+    </section>
+
+    <section class="card" id="mercado" aria-labelledby="h-market">
       <div class="card-head">
         <h2 id="h-market">Mercado</h2>
-        <span class="muted small" id="updated"></span>
+        <div class="tools">
+          <input type="search" id="search" placeholder="Buscar moeda…" aria-label="Buscar moeda" autocomplete="off">
+          <div class="seg" role="group" aria-label="Filtro" id="filter">
+            <button type="button" data-f="all" aria-pressed="true">Todas</button>
+            <button type="button" data-f="fav" aria-pressed="false">★ Favoritas</button>
+          </div>
+        </div>
       </div>
       <div class="table-wrap">
         <table class="market">
           <thead>
             <tr>
+              <th scope="col"><span class="sr">Favorita</span></th>
               <th scope="col">#</th>
               <th scope="col">Moeda</th>
               <th scope="col" class="num">Preço</th>
               <th scope="col" class="num">24h</th>
-              <th scope="col" class="num">7d</th>
-              <th scope="col" class="num">30d</th>
-              <th scope="col" class="num hide-sm">Valor de mercado</th>
+              <th scope="col" class="num hide-sm">7d</th>
+              <th scope="col" class="num hide-sm">30d</th>
+              <th scope="col" class="num hide-md">Valor de mercado</th>
+              <th scope="col" class="num hide-sm">Últimos 7 dias</th>
             </tr>
           </thead>
           <tbody id="market-body"></tbody>
         </table>
       </div>
-      <button type="button" id="more" class="link">Mostrar top 20</button>
+      <p class="muted small empty" id="market-empty" hidden></p>
+      <button type="button" id="more" class="link">Mostrar mais</button>
     </section>
 
-    <section class="card" aria-labelledby="h-analysis">
+    <section class="card" id="analise" aria-labelledby="h-analysis">
       <div class="card-head">
         <h2 id="h-analysis">Análise e previsão</h2>
         <select id="coin-select" aria-label="Moeda analisada"></select>
       </div>
+
+      <div class="coin-hero" id="coin-hero"></div>
+
       <div class="controls">
         <div class="seg" role="group" aria-label="Período do gráfico" id="range">
           <button type="button" data-days="30" aria-pressed="false">30d</button>
           <button type="button" data-days="90" aria-pressed="true">90d</button>
           <button type="button" data-days="180" aria-pressed="false">180d</button>
-          <button type="button" data-days="365" aria-pressed="false">1a</button>
+          <button type="button" data-days="365" aria-pressed="false">1 ano</button>
         </div>
         <div class="seg" role="group" aria-label="Horizonte da previsão" id="horizon">
-          <button type="button" data-h="7" aria-pressed="false">7 dias</button>
-          <button type="button" data-h="14" aria-pressed="true">14 dias</button>
-          <button type="button" data-h="30" aria-pressed="false">30 dias</button>
+          <button type="button" data-h="7" aria-pressed="false">Prever 7d</button>
+          <button type="button" data-h="14" aria-pressed="true">14d</button>
+          <button type="button" data-h="30" aria-pressed="false">30d</button>
         </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="legend" aria-hidden="true">
+          <span><i class="key line s1"></i>Preço</span>
+          <span><i class="key line s2"></i>Média 7d</span>
+          <span><i class="key line s3"></i>Média 30d</span>
+          <span><i class="key band"></i>Faixa provável (80%)</span>
+          <span><i class="key dash"></i>Projeção central</span>
+          <span><i class="key level"></i>Suporte / resistência</span>
+        </div>
+        <div class="chart" id="price-chart"></div>
+        <h3 class="sub">RSI (14)</h3>
+        <div class="chart small-chart" id="rsi-chart"></div>
       </div>
 
       <div class="tiles" id="tiles"></div>
+      <div class="signal" id="signal"></div>
 
-      <div class="legend" id="legend" aria-hidden="true">
-        <span><i class="key line s1"></i>Preço</span>
-        <span><i class="key line s2"></i>Média 7d</span>
-        <span><i class="key line s3"></i>Média 30d</span>
-        <span><i class="key band"></i>Faixa provável (80%)</span>
-        <span><i class="key dash"></i>Projeção central</span>
-      </div>
-      <div class="chart" id="price-chart"></div>
-      <h3 class="sub">RSI (14)</h3>
-      <div class="chart small-chart" id="rsi-chart"></div>
-      <p class="muted small" id="signal-text"></p>
       <details class="method">
         <summary>Como a previsão é calculada</summary>
         <p>A projeção usa os retornos diários dos últimos 90 dias. A <b>volatilidade</b> define a largura da faixa
           (80% de probabilidade, se o comportamento recente se repetir). A <b>tendência</b> é metade da inclinação
           dos últimos 30 dias — reduzida de propósito, porque tendências passadas raramente continuam inteiras.</p>
-        <p>A tendência resumida combina médias móveis (7 e 30 dias), RSI e o retorno de 30 dias.
-          É uma estimativa estatística, <b>não é recomendação de investimento</b>: notícias, juros e
-          regulação mudam o preço de formas que nenhum modelo prevê.</p>
+        <p>O <b>acerto histórico</b> refaz a mesma previsão em cada dia dos últimos meses, usando só os dados
+          disponíveis naquele dia, e confere se o preço real caiu dentro da faixa. Perto de 80% significa que a faixa
+          está bem calibrada.</p>
+        <p><b>Suporte</b> e <b>resistência</b> são o menor e o maior preço dos últimos 30 dias.
+          Tudo isto é estatística, <b>não é recomendação de investimento</b>: notícias, juros e regulação mudam o
+          preço de formas que nenhum modelo prevê.</p>
       </details>
     </section>
 
-    <section class="card" aria-labelledby="h-wallet">
-      <div class="card-head">
-        <h2 id="h-wallet">Carteira</h2>
-        <span class="muted small">Salva só neste navegador</span>
-      </div>
-      <form id="wallet-form" class="form-row">
-        <label>Moeda <select name="coin" required></select></label>
-        <label>Quantidade <input name="qty" type="number" step="any" min="0" required inputmode="decimal" placeholder="0,5"></label>
-        <label>Preço médio pago <input name="cost" type="number" step="any" min="0" inputmode="decimal" placeholder="opcional"></label>
-        <button type="submit">Adicionar</button>
-      </form>
-      <div class="tiles" id="wallet-tiles"></div>
-      <div class="table-wrap">
-        <table class="wallet">
-          <thead>
-            <tr>
-              <th scope="col">Moeda</th>
-              <th scope="col" class="num">Quantidade</th>
-              <th scope="col" class="num">Valor</th>
-              <th scope="col" class="num">Resultado</th>
-              <th scope="col"><span class="sr">Remover</span></th>
-            </tr>
-          </thead>
-          <tbody id="wallet-body"></tbody>
-        </table>
-      </div>
-      <p class="muted small" id="wallet-empty">Nenhuma moeda na carteira ainda.</p>
-    </section>
+    <div class="two-col">
+      <section class="card" id="carteira" aria-labelledby="h-wallet">
+        <div class="card-head">
+          <h2 id="h-wallet">Carteira</h2>
+          <div class="tools">
+            <button type="button" class="ghost sm" id="export">Baixar backup</button>
+            <label class="ghost sm file-btn">Restaurar<input type="file" id="import" accept="application/json,.json"></label>
+          </div>
+        </div>
+        <form id="wallet-form" class="form-grid">
+          <label>Moeda <select name="coin" required></select></label>
+          <label>Quantidade <input name="qty" type="number" step="any" min="0" required inputmode="decimal" placeholder="0,5"></label>
+          <label>Preço médio pago <span class="hint" data-cur-label></span><input name="cost" type="number" step="any" min="0" inputmode="decimal" placeholder="opcional"></label>
+          <button type="submit">Adicionar</button>
+        </form>
+        <div class="tiles" id="wallet-tiles"></div>
+        <div class="alloc" id="alloc"></div>
+        <div class="table-wrap">
+          <table class="wallet">
+            <thead>
+              <tr>
+                <th scope="col">Moeda</th>
+                <th scope="col" class="num">Quantidade</th>
+                <th scope="col" class="num">Valor</th>
+                <th scope="col" class="num">Resultado</th>
+                <th scope="col"><span class="sr">Remover</span></th>
+              </tr>
+            </thead>
+            <tbody id="wallet-body"></tbody>
+          </table>
+        </div>
+        <p class="muted small empty" id="wallet-empty">Nenhuma moeda na carteira ainda. Ela fica salva só neste navegador — use “Baixar backup” para guardar uma cópia.</p>
+      </section>
 
-    <section class="card" aria-labelledby="h-alerts">
-      <div class="card-head">
-        <h2 id="h-alerts">Alertas de preço</h2>
-        <span class="muted small">Verificados a cada minuto com a página aberta</span>
+      <div class="stack">
+        <section class="card" id="alertas" aria-labelledby="h-alerts">
+          <div class="card-head">
+            <h2 id="h-alerts">Alertas de preço</h2>
+          </div>
+          <form id="alert-form" class="form-grid">
+            <label>Moeda <select name="coin" required></select></label>
+            <label>Quando
+              <select name="dir"><option value="above">subir acima de</option><option value="below">cair abaixo de</option></select>
+            </label>
+            <label>Valor <span class="hint" data-cur-label></span><input name="price" type="number" step="any" min="0" required inputmode="decimal"></label>
+            <button type="submit">Criar alerta</button>
+          </form>
+          <ul class="alerts" id="alert-list"></ul>
+          <p class="muted small empty" id="alert-empty">Nenhum alerta criado. Os alertas são verificados a cada minuto com a página aberta.</p>
+        </section>
+
+        <section class="card" id="conversor" aria-labelledby="h-conv">
+          <div class="card-head">
+            <h2 id="h-conv">Conversor</h2>
+          </div>
+          <div class="conv">
+            <label>Moeda <select id="conv-coin"></select></label>
+            <div class="conv-row">
+              <label>Quantidade <input id="conv-qty" type="number" step="any" min="0" inputmode="decimal" value="1"></label>
+              <span class="conv-eq" aria-hidden="true">⇄</span>
+              <label>Valor <span class="hint" data-cur-label></span><input id="conv-val" type="number" step="any" min="0" inputmode="decimal"></label>
+            </div>
+            <p class="muted small" id="conv-note"></p>
+          </div>
+        </section>
       </div>
-      <form id="alert-form" class="form-row">
-        <label>Moeda <select name="coin" required></select></label>
-        <label>Quando o preço
-          <select name="dir"><option value="above">subir acima de</option><option value="below">cair abaixo de</option></select>
-        </label>
-        <label>Valor <input name="price" type="number" step="any" min="0" required inputmode="decimal"></label>
-        <button type="submit">Criar alerta</button>
-      </form>
-      <ul class="alerts" id="alert-list"></ul>
-      <p class="muted small" id="alert-empty">Nenhum alerta criado.</p>
-    </section>
+    </div>
   </main>
 
-  <footer class="muted small">
-    Dados: <a href="https://www.coingecko.com/" rel="noopener" target="_blank">CoinGecko</a>.
-    Não é recomendação de investimento.
+  <footer class="foot muted small">
+    <span>Dados: <a href="https://www.coingecko.com/" rel="noopener" target="_blank">CoinGecko</a> e
+      <a href="https://alternative.me/crypto/fear-and-greed-index/" rel="noopener" target="_blank">Alternative.me</a>.</span>
+    <span>Não é recomendação de investimento.</span>
   </footer>
 
   <div id="toasts" class="toasts" aria-live="assertive"></div>
