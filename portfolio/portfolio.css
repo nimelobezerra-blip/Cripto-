@@ -94,7 +94,9 @@ a { color: inherit; }
 
 /* Galeria */
 .galeria { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 28px 18px; }
-.galeria li[hidden] { display: none; }
+.galeria li[hidden], .vazio[hidden] { display: none; }
+.galeria:empty { display: none; }
+.vazio { margin: 8px 0 0; padding: 56px 16px; text-align: center; color: var(--tinta-2); border: 1.5px dashed var(--linha); border-radius: 12px; }
 .galeria button {
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: left; color: inherit;
 }

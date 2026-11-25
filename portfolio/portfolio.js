@@ -32,6 +32,9 @@ document.getElementById("ano").textContent = new Date().getFullYear();
 // Filtro da galeria
 const filtros = document.querySelectorAll(".filtro");
 const itens = [...document.querySelectorAll(".galeria li")];
+const vazio = document.querySelector(".vazio");
+const visiveis = () => itens.filter((li) => !li.hidden);
+vazio.hidden = itens.length > 0;
 filtros.forEach((b) =>
   b.addEventListener("click", () => {
     filtros.forEach((x) => {
@@ -40,6 +43,7 @@ filtros.forEach((b) =>
     });
     const f = b.dataset.filtro;
     itens.forEach((li) => (li.hidden = f !== "todos" && li.dataset.cat !== f));
+    vazio.hidden = visiveis().length > 0;
   })
 );
 
@@ -48,7 +52,6 @@ const caixa = document.querySelector(".caixa-foto");
 const cImg = caixa.querySelector("img");
 const cLeg = caixa.querySelector("figcaption");
 let atual = 0;
-const visiveis = () => itens.filter((li) => !li.hidden);
 function mostrar(li) {
   const b = li.querySelector("button");
   cImg.src = `fotos/${b.dataset.foto}.webp`;
