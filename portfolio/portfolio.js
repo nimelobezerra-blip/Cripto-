@@ -14,10 +14,10 @@ document.querySelectorAll("[data-campo]").forEach((el) => {
   if (v) el.textContent = v;
 });
 
-const msg = encodeURIComponent("Olá! Vi o seu portfólio e quero um orçamento.");
+const msg = encodeURIComponent("Olá! Vi o seu portfólio.");
 const links = {
   whatsapp: `https://wa.me/${DADOS.whatsapp}?text=${msg}`,
-  email: `mailto:${DADOS.email}?subject=${encodeURIComponent("Pedido de orçamento")}`,
+  email: `mailto:${DADOS.email}?subject=${encodeURIComponent("Contacto pelo portfólio")}`,
   instagram: `https://instagram.com/${DADOS.instagram}`,
 };
 document.querySelectorAll("[data-link]").forEach((a) => {
