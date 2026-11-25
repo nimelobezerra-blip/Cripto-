@@ -69,8 +69,7 @@ a { color: inherit; }
 .hero-grade { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
 .hero h1 { font-size: clamp(34px, 5.2vw, 58px); font-weight: 800; letter-spacing: -.02em; }
 .hero h1 span { color: var(--tinta-2); font-weight: 700; }
-.hero-texto { font-size: 18px; color: var(--tinta-2); max-width: 54ch; margin: 22px 0 30px; }
-.hero-acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-texto { font-size: 18px; color: var(--tinta-2); max-width: 54ch; margin: 22px 0 0; }
 
 /* Mosaico de fotos com marcas de corte */
 .mosaico { position: relative; aspect-ratio: 1 / 1.05; padding: 26px; }
@@ -230,8 +229,7 @@ a { color: inherit; }
     .galeria { grid-template-columns: 1fr 1fr; gap: 10px; }
   .galeria span { font-size: 13px; padding: 24px 10px 10px; }
   .caixa-foto[open] { grid-template-columns: 40px 1fr 40px; }
-  .hero-acoes .botao { flex: 1; padding: 0 14px; }
-}
+  }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::after { transition: none !important; }

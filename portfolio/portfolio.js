@@ -1,6 +1,6 @@
 // ===== EDITE AQUI os seus dados =====
 const DADOS = {
-  nome: "Seu Nome",
+  nome: "Nicolas Bezerra",
   cidade: "Sua cidade",
   whatsapp: "351900000000", // indicativo do país + número, só dígitos
   email: "seuemail@exemplo.com",
