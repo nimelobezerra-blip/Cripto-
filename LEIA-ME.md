@@ -46,8 +46,8 @@ Abra o endereço no **Safari** e toque em **Compartilhar → Adicionar à Tela d
 | `_headers` | Cabeçalhos de segurança no Cloudflare |
 | `manifest.webmanifest`, `icons/` | Ícone e instalação na tela de início |
 
-## Portfólio de montagem gráfica
+## Portfólio de aplicador de vinil
 
-A pasta `portfolio/` tem um site de portfólio separado (trabalhos, antes e depois, serviços e habilidades de montagem e aplicação gráfica). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
+A pasta `portfolio/` tem um site de portfólio separado (trabalhos, antes e depois, serviços e habilidades de aplicação de vinil). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
 
 Para pôr os seus dados (nome, cidade, WhatsApp, e-mail e Instagram), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os trabalhos, serviços e habilidades ficam em `portfolio/index.html`, e as fotos em `portfolio/fotos/` (cada foto tem uma versão grande e uma pequena, terminada em `-p`).
