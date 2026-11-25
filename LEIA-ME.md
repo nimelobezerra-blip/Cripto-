@@ -48,6 +48,6 @@ Abra o endereço no **Safari** e toque em **Compartilhar → Adicionar à Tela d
 
 ## Portfólio de montagem gráfica
 
-A pasta `portfolio/` tem um site de portfólio separado (serviços e habilidades de acabamento e montagem gráfica). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
+A pasta `portfolio/` tem um site de portfólio separado (trabalhos, antes e depois, serviços e habilidades de montagem e aplicação gráfica). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
 
-Para pôr os seus dados (nome, cidade, WhatsApp, e-mail e Instagram), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os serviços e habilidades ficam em `portfolio/index.html`.
+Para pôr os seus dados (nome, cidade, WhatsApp, e-mail e Instagram), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os trabalhos, serviços e habilidades ficam em `portfolio/index.html`, e as fotos em `portfolio/fotos/` (cada foto tem uma versão grande e uma pequena, terminada em `-p`).

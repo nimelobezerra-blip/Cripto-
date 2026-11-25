@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Montagem Gráfica | Portfólio</title>
-  <meta name="description" content="Montagem de artigos gráficos e acabamento para gráficas: corte, vinco, dobra, encadernação, laminação, embalagens e muito mais.">
+  <meta name="description" content="Montagem e aplicação gráfica: películas para vidro, revestimento de pilares, envelopamento de veículos, montras, stands e estruturas para eventos.">
   <meta name="theme-color" content="#14161a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
         <span data-campo="nome">Seu Nome</span>
       </a>
       <nav class="menu" aria-label="Seções">
+        <a href="#trabalhos">Trabalhos</a>
         <a href="#servicos">Serviços</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#contato" class="menu-cta">Orçamento</a>
@@ -33,31 +34,80 @@
     <section class="hero">
       <div class="wrap hero-grade">
         <div>
-          <p class="sobretitulo">Montagem &amp; acabamento gráfico</p>
-          <h1>O impresso sai da máquina.<br><span>O acabamento faz ele ficar pronto.</span></h1>
-          <p class="hero-texto">Faço a montagem de artigos gráficos para gráficas, agências e clientes finais: corte, vinco, dobra, encadernação, laminação e montagem de embalagens, com prazo combinado e cuidado em cada peça.</p>
+          <p class="sobretitulo">Montagem &amp; aplicação gráfica</p>
+          <h1>Do arquivo impresso<br><span>ao espaço pronto.</span></h1>
+          <p class="hero-texto">Aplico e monto comunicação visual para gráficas, agências e empresas: películas em vidro, revestimento de pilares, envelopamento de veículos, montras e stands para eventos. Acabamento limpo, sem bolhas e no prazo combinado.</p>
           <div class="hero-acoes">
             <a class="botao" href="#contato">Pedir orçamento</a>
-            <a class="botao botao-linha" href="#servicos">Ver serviços</a>
+            <a class="botao botao-linha" href="#trabalhos">Ver trabalhos</a>
           </div>
           <ul class="numeros">
             <li><strong data-campo="anos">10+</strong><span>anos de experiência</span></li>
-            <li><strong>12</strong><span>tipos de serviço</span></li>
-            <li><strong>B2B</strong><span>atendo gráficas e agências</span></li>
+            <li><strong>8</strong><span>tipos de serviço</span></li>
+            <li><strong>B2B</strong><span>gráficas, agências e marcas</span></li>
           </ul>
         </div>
 
-        <figure class="folha" aria-hidden="true">
+        <div class="mosaico" aria-hidden="true">
           <span class="corte c1"></span><span class="corte c2"></span><span class="corte c3"></span><span class="corte c4"></span>
-          <span class="registro"></span>
-          <div class="folha-miolo">
-            <div class="caixa-planif">
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="barra-cores"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-          <figcaption>Faca • Vinco • Refile</figcaption>
-        </figure>
+          <img class="m1" src="fotos/stand-p.webp" alt="">
+          <img class="m2" src="fotos/pilar-1-p.webp" alt="">
+          <img class="m3" src="fotos/carro-1-p.webp" alt="">
+          <div class="barra-cores"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trabalhos" class="secao">
+      <div class="wrap">
+        <div class="secao-topo">
+          <p class="sobretitulo">Trabalhos</p>
+          <h2>Alguns trabalhos realizados</h2>
+          <p>Toque numa foto para ampliar. Use os botões para ver por tipo de trabalho.</p>
+        </div>
+
+        <div class="filtros" role="group" aria-label="Filtrar trabalhos">
+          <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filtro" data-filtro="vidros" aria-pressed="false">Películas em vidro</button>
+          <button type="button" class="filtro" data-filtro="revestimento" aria-pressed="false">Pilares</button>
+          <button type="button" class="filtro" data-filtro="veiculos" aria-pressed="false">Veículos</button>
+          <button type="button" class="filtro" data-filtro="eventos" aria-pressed="false">Eventos e montras</button>
+        </div>
+
+        <ul class="galeria">
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-depois" data-legenda="Película jateada em divisória de escritório"><img src="fotos/escritorio-depois-p.webp" alt="Divisória de vidro de escritório com faixa de película jateada" loading="lazy"><span>Faixa jateada em divisórias</span></button></li>
+          <li data-cat="eventos"><button type="button" data-foto="stand" data-legenda="Stand em contentor para festival, com painéis impressos e letras em relevo"><img src="fotos/stand-p.webp" alt="Stand vermelho e roxo montado num festival ao ar livre" loading="lazy"><span>Stand para festival</span></button></li>
+          <li data-cat="revestimento" class="alto"><button type="button" data-foto="pilar-1" data-legenda="Revestimento de pilar com vinil impresso e lettering"><img src="fotos/pilar-1-p.webp" alt="Pilar revestido em roxo com o texto Meeting area" loading="lazy"><span>Revestimento de pilar</span></button></li>
+          <li data-cat="veiculos"><button type="button" data-foto="carro-1" data-legenda="Envelopamento parcial de veículo de empresa"><img src="fotos/carro-1-p.webp" alt="Carro com envelopamento cinza, vermelho e dados da empresa" loading="lazy"><span>Envelopamento de frota</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="vidro-ondas-1" data-legenda="Película jateada recortada em ondas, em janela de jardim interno"><img src="fotos/vidro-ondas-1-p.webp" alt="Janela com faixas de película jateada em forma de ondas" loading="lazy"><span>Vinil recortado em ondas</span></button></li>
+          <li data-cat="eventos" class="alto"><button type="button" data-foto="montra" data-legenda="Montra de loja tapada com painéis impressos durante obras"><img src="fotos/montra-p.webp" alt="Fachada de loja com painel impresso de campanha de moda" loading="lazy"><span>Montra de loja</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-porta" data-legenda="Película jateada em porta dupla de vidro"><img src="fotos/escritorio-porta-p.webp" alt="Porta dupla de vidro com faixa de película jateada" loading="lazy"><span>Portas de vidro</span></button></li>
+          <li data-cat="eventos" class="alto"><button type="button" data-foto="mesas" data-legenda="Mesas lacadas em rosa para evento"><img src="fotos/mesas-p.webp" alt="Duas mesas pintadas de rosa num armazém" loading="lazy"><span>Mobiliário para evento</span></button></li>
+          <li data-cat="revestimento" class="alto"><button type="button" data-foto="pilar-2" data-legenda="Pilar revestido com suporte para televisores"><img src="fotos/pilar-2-p.webp" alt="Pilar roxo revestido com televisor fixado" loading="lazy"><span>Pilar com televisores</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-corredor" data-legenda="Película jateada em corredor de salas de reunião"><img src="fotos/escritorio-corredor-p.webp" alt="Corredor com divisórias de vidro e faixa jateada" loading="lazy"><span>Corredor de salas</span></button></li>
+          <li data-cat="veiculos"><button type="button" data-foto="carro-2" data-legenda="Envelopamento: vista lateral com contactos e logótipo"><img src="fotos/carro-2-p.webp" alt="Lateral do carro envelopado com logótipo e telefone" loading="lazy"><span>Lateral do veículo</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="vidro-ondas-2" data-legenda="Detalhe do vinil recortado: cortes limpos e sem bolhas"><img src="fotos/vidro-ondas-2-p.webp" alt="Detalhe das ondas de película jateada no canto da janela" loading="lazy"><span>Detalhe do recorte</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-sala" data-legenda="Película jateada em sala individual"><img src="fotos/escritorio-sala-p.webp" alt="Sala com divisória de vidro e faixa jateada" loading="lazy"><span>Sala individual</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-detalhe" data-legenda="Detalhe da emenda entre painéis de vidro"><img src="fotos/escritorio-detalhe-p.webp" alt="Detalhe da faixa jateada alinhada entre dois vidros" loading="lazy"><span>Alinhamento entre vidros</span></button></li>
+          <li data-cat="vidros" class="alto"><button type="button" data-foto="escritorio-mesa" data-legenda="Faixa jateada em open space, à altura dos postos de trabalho"><img src="fotos/escritorio-mesa-p.webp" alt="Open space com divisória de vidro e faixa jateada atrás das mesas" loading="lazy"><span>Open space</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="secao secao-clara">
+      <div class="wrap antes-grade">
+        <div>
+          <p class="sobretitulo">Antes e depois</p>
+          <h2>Privacidade sem perder a luz</h2>
+          <p>Arraste a barra para comparar a mesma divisória de escritório antes e depois da aplicação da película jateada.</p>
+        </div>
+        <div class="comparar">
+          <img src="fotos/escritorio-antes.webp" alt="Divisória de vidro antes, totalmente transparente">
+          <img class="depois" src="fotos/escritorio-depois.webp" alt="A mesma divisória depois, com faixa jateada">
+          <span class="rotulo r-antes">Antes</span><span class="rotulo r-depois">Depois</span>
+          <span class="divisor" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+        </div>
       </div>
     </section>
 
@@ -65,90 +115,50 @@
       <div class="wrap">
         <div class="secao-topo">
           <p class="sobretitulo">Serviços</p>
-          <h2>Do refile à embalagem montada</h2>
-          <p>Escolha uma categoria para filtrar. Cada serviço pode ser feito em pequenas tiragens ou em lotes grandes.</p>
-        </div>
-
-        <div class="filtros" role="group" aria-label="Filtrar serviços">
-          <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
-          <button type="button" class="filtro" data-filtro="acabamento" aria-pressed="false">Acabamento</button>
-          <button type="button" class="filtro" data-filtro="encadernacao" aria-pressed="false">Encadernação</button>
-          <button type="button" class="filtro" data-filtro="montagem" aria-pressed="false">Montagem</button>
-          <button type="button" class="filtro" data-filtro="comunicacao" aria-pressed="false">Comunicação visual</button>
+          <h2>O que eu faço</h2>
+          <p>Da medição no local à aplicação final, em pequenas obras ou grandes projetos.</p>
         </div>
 
         <ul class="cartoes">
-          <li class="cartao" data-cat="acabamento">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 20 4M6 4h6M4 6v6M14 20h6M20 14v6"/></svg>
-            <h3>Refile e corte em guilhotina</h3>
-            <p>Corte preciso no formato final, com sangria respeitada e pilhas alinhadas.</p>
-            <span class="tag">Acabamento</span>
+          <li class="cartao" data-cat="vidros">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 10h16M4 15h16"/></svg>
+            <h3>Películas para vidro</h3>
+            <p>Jateado, fosco e decorativo para divisórias, portas e janelas. Privacidade sem tirar a luz.</p>
           </li>
-          <li class="cartao" data-cat="acabamento">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke-dasharray="2 2"/><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
-            <h3>Corte e vinco</h3>
-            <p>Peças com faca especial: caixas, pastas, tags, displays e formatos recortados.</p>
-            <span class="tag">Acabamento</span>
+          <li class="cartao" data-cat="vidros">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3-3 6 3 9 0s6 3 9 0M3 14c3-3 6 3 9 0s6 3 9 0"/></svg>
+            <h3>Vinil de recorte</h3>
+            <p>Formas, logótipos e letras recortadas com acabamento limpo, em vidro, parede ou móvel.</p>
           </li>
-          <li class="cartao" data-cat="acabamento">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM9.3 5v14M14.6 5v14"/></svg>
-            <h3>Dobra e vinco de folhetos</h3>
-            <p>Folders de 2, 3 ou mais dobras, sanfona, janela e cartões dobrados sem rachar.</p>
-            <span class="tag">Acabamento</span>
+          <li class="cartao" data-cat="revestimento">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"/><path d="M12 7v10"/></svg>
+            <h3>Revestimento de pilares</h3>
+            <p>Pilares e colunas revestidos com vinil impresso ou lona, com lettering e sinalização.</p>
           </li>
-          <li class="cartao" data-cat="acabamento">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9h16"/></svg>
-            <h3>Laminação e plastificação</h3>
-            <p>BOPP fosco ou brilho, soft touch e plastificação para cardápios e crachás.</p>
-            <span class="tag">Acabamento</span>
+          <li class="cartao" data-cat="veiculos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16v-4l2-5h10l4 5h2v4"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <h3>Envelopamento de veículos</h3>
+            <p>Frotas e carros de empresa com logótipo e contactos, total ou parcial.</p>
           </li>
-          <li class="cartao" data-cat="encadernacao">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h12v18H7z"/><path d="M4 6h3M4 10h3M4 14h3M4 18h3"/></svg>
-            <h3>Espiral e wire-o</h3>
-            <p>Apostilas, cadernos, agendas e calendários de mesa com acabamento firme.</p>
-            <span class="tag">Encadernação</span>
+          <li class="cartao" data-cat="eventos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V8h14v12M5 8l2-4h10l2 4"/></svg>
+            <h3>Stands e estruturas</h3>
+            <p>Montagem de stands, contentores e estruturas para feiras, festivais e ativações de marca.</p>
           </li>
-          <li class="cartao" data-cat="encadernacao">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M12 5C10 4 6 4 3 5v14c3-1 7-1 9 1 2-2 6-2 9-1V5c-3-1-7-1-9 0z"/></svg>
-            <h3>Grampo, lombada e capa dura</h3>
-            <p>Revistas grampeadas, livros com lombada quadrada (hot melt) e capas duras.</p>
-            <span class="tag">Encadernação</span>
+          <li class="cartao" data-cat="eventos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M9 4v16"/><circle cx="15" cy="12" r="3"/></svg>
+            <h3>Montras e fachadas</h3>
+            <p>Painéis de campanha, tapumes de obra e decoração de montras de lojas.</p>
           </li>
-          <li class="cartao" data-cat="encadernacao">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M5 7h14M8 11h8M8 14h8M8 17h5"/></svg>
-            <h3>Blocos e talões numerados</h3>
-            <p>Blocagem com cola, picote, numeração sequencial e vias em papel carbonado.</p>
-            <span class="tag">Encadernação</span>
+          <li class="cartao" data-cat="eventos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v3H3zM5 12v8M19 12v8"/></svg>
+            <h3>Mobiliário para eventos</h3>
+            <p>Montagem e acabamento de mesas, balcões e peças cenográficas na cor da marca.</p>
           </li>
-          <li class="cartao" data-cat="montagem">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 3 7.5v9L12 21l9-4.5v-9z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/></svg>
-            <h3>Montagem de embalagens</h3>
-            <p>Caixas, sacolas, cartuchos e kits montados, colados e prontos para entrega.</p>
-            <span class="tag">Montagem</span>
-          </li>
-          <li class="cartao" data-cat="montagem">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
-            <h3>Convites e papelaria fina</h3>
-            <p>Envelopes, laços, aplicação de ilhós, cintas e montagem peça por peça.</p>
-            <span class="tag">Montagem</span>
-          </li>
-          <li class="cartao" data-cat="montagem">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h10l6 6v10H4z"/><path d="M14 4v6h6"/></svg>
-            <h3>Pastas, kits e manuseio</h3>
-            <p>Encarte, intercalação, ensacamento e montagem de kits promocionais e de eventos.</p>
-            <span class="tag">Montagem</span>
-          </li>
-          <li class="cartao" data-cat="comunicacao">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><circle cx="5.5" cy="6.5" r=".6"/><circle cx="18.5" cy="6.5" r=".6"/><path d="M12 16v5M8 21h8"/></svg>
-            <h3>Banners e lonas</h3>
-            <p>Bastão e cordão, ilhós, solda e bainha para banners, faixas e fachadas.</p>
-            <span class="tag">Comunicação visual</span>
-          </li>
-          <li class="cartao" data-cat="comunicacao">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v14H8zM6 21h12M12 17v4"/></svg>
-            <h3>Displays, totens e adesivos</h3>
-            <p>Montagem de displays de balcão e chão, totens e aplicação de adesivos e vinil.</p>
-            <span class="tag">Comunicação visual</span>
+          <li class="cartao" data-cat="revestimento">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h11l3 3-3 3H5z"/></svg>
+            <h3>Sinalética interior</h3>
+            <p>Sinalização de salas, áreas e percursos em escritórios, hotéis e espaços de eventos.</p>
           </li>
         </ul>
       </div>
@@ -165,29 +175,29 @@
           <div class="hab-bloco">
             <h3>Técnicas</h3>
             <ul class="barras">
-              <li><span>Refile e corte em guilhotina</span><b data-nivel="95"></b></li>
-              <li><span>Corte e vinco / faca especial</span><b data-nivel="90"></b></li>
-              <li><span>Encadernação (espiral, wire-o, grampo)</span><b data-nivel="90"></b></li>
-              <li><span>Montagem e colagem de embalagens</span><b data-nivel="85"></b></li>
-              <li><span>Laminação e plastificação</span><b data-nivel="85"></b></li>
-              <li><span>Acabamento de lonas e banners</span><b data-nivel="80"></b></li>
+              <li><span>Aplicação de películas em vidro</span><b data-nivel="95"></b></li>
+              <li><span>Vinil de recorte e lettering</span><b data-nivel="90"></b></li>
+              <li><span>Revestimento de pilares e paredes</span><b data-nivel="90"></b></li>
+              <li><span>Montagem de stands e estruturas</span><b data-nivel="85"></b></li>
+              <li><span>Envelopamento de veículos</span><b data-nivel="80"></b></li>
+              <li><span>Montras e painéis de grande formato</span><b data-nivel="85"></b></li>
             </ul>
           </div>
 
           <div class="hab-bloco">
             <h3>Materiais que trabalho</h3>
             <ul class="chips">
-              <li>Couché</li><li>Offset</li><li>Supremo / Duplex</li><li>Triplex</li>
-              <li>Kraft</li><li>Papel-cartão</li><li>Vergê e texturizados</li><li>Adesivo vinil</li>
-              <li>Lona</li><li>PVC e PS</li><li>Papelão ondulado</li><li>Filme BOPP</li>
+              <li>Vinil jateado</li><li>Vinil impresso</li><li>Vinil de recorte</li><li>Vinil cast</li>
+              <li>Lona</li><li>PVC expandido</li><li>Dibond / ACM</li><li>Foam board</li>
+              <li>OSB e MDF</li><li>Treliça de alumínio</li><li>Tecido tensionado</li><li>Laminado</li>
             </ul>
 
             <h3>No trabalho</h3>
             <ul class="lista-check">
-              <li>Conferência da peça antes de iniciar a tiragem</li>
-              <li>Leitura de arquivo, marcas de corte e sangria</li>
-              <li>Organização de lotes e embalagem para entrega</li>
-              <li>Prazo combinado e retorno rápido no WhatsApp</li>
+              <li>Medição e visita técnica antes de produzir</li>
+              <li>Aplicação sem bolhas e com emendas alinhadas</li>
+              <li>Trabalho em horário fora do expediente, se preciso</li>
+              <li>Local limpo e entregue pronto a usar</li>
             </ul>
           </div>
         </div>
@@ -198,9 +208,9 @@
       <div class="wrap contato-caixa">
         <div>
           <p class="sobretitulo">Contato</p>
-          <h2>Tem um material para finalizar?</h2>
-          <p>Mande o tipo de peça, a quantidade e o prazo. Respondo com o orçamento.</p>
-          <p class="cidade" data-campo="cidade">Sua cidade, UF</p>
+          <h2>Tem um espaço para transformar?</h2>
+          <p>Mande fotos do local, as medidas aproximadas e o prazo. Respondo com o orçamento.</p>
+          <p class="cidade" data-campo="cidade">Sua cidade</p>
         </div>
         <div class="contato-acoes">
           <a class="botao botao-zap" data-link="whatsapp" href="#">Chamar no WhatsApp</a>
@@ -213,7 +223,17 @@
   </main>
 
   <footer class="rodape">
-    <div class="wrap">© <span id="ano">2026</span> <span data-campo="nome">Seu Nome</span> • Montagem e acabamento gráfico</div>
+    <div class="wrap">© <span id="ano">2026</span> <span data-campo="nome">Seu Nome</span> • Montagem e aplicação gráfica</div>
   </footer>
+
+  <dialog class="caixa-foto" aria-label="Foto ampliada">
+    <button type="button" class="fechar" aria-label="Fechar">×</button>
+    <button type="button" class="nav ant" aria-label="Foto anterior">‹</button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <button type="button" class="nav prox" aria-label="Próxima foto">›</button>
+  </dialog>
 </body>
 </html>
