@@ -181,32 +181,6 @@ a { color: inherit; }
 .cartao h3 { font-size: 18px; font-weight: 700; }
 .cartao p { margin: 0; color: var(--tinta-2); font-size: 15px; flex: 1; }
 
-/* Habilidades */
-.secao-escura { background: var(--tinta); color: #f2f0ec; }
-.secao-escura .sobretitulo { color: var(--y); }
-.hab-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.hab-bloco { background: #1d2026; border: 1px solid #2b2f37; border-radius: var(--raio); padding: 28px; }
-.hab-bloco h3 { font-size: 18px; margin-bottom: 18px; }
-.hab-bloco h3:not(:first-child) { margin-top: 30px; }
-.barras { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
-.barras li { display: grid; gap: 8px; font-size: 15px; }
-.barras b { display: block; height: 8px; border-radius: 99px; background: #2e333c; overflow: hidden; position: relative; }
-.barras b::after {
-  content: ""; position: absolute; inset: 0; width: var(--n, 0%); border-radius: inherit;
-  background: linear-gradient(90deg, var(--c), var(--m) 60%, var(--y));
-  transition: width 1.2s cubic-bezier(.2, .8, .2, 1);
-}
-.chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.chips li { font-size: 14px; padding: 6px 12px; border-radius: 999px; border: 1px solid #3a3f49; color: #dcd9d3; }
-.lista-check { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; color: #dcd9d3; }
-.lista-check li { padding-left: 28px; position: relative; }
-.lista-check li::before {
-  content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%;
-  background: var(--y);
-  -webkit-mask: radial-gradient(circle, #000 0 3px, transparent 3.5px);
-}
-.lista-check li::after { content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--y); box-sizing: border-box; }
-
 /* Contato */
 .contato-caixa {
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
@@ -223,7 +197,7 @@ a { color: inherit; }
 /* Celular */
 @media (max-width: 860px) {
   .hero { padding: 40px 0 64px; }
-  .hero-grade, .hab-grade, .contato-caixa, .antes-grade { grid-template-columns: 1fr; }
+  .hero-grade, .contato-caixa, .antes-grade { grid-template-columns: 1fr; }
   .mosaico { max-width: 420px; margin-inline: auto; width: 100%; }
   .antes-grade { gap: 28px; }
   .secao { padding: 64px 0; }

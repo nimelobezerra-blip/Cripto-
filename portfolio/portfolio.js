@@ -91,20 +91,3 @@ const comp = document.querySelector(".comparar");
 comp.querySelector("input").addEventListener("input", (e) =>
   comp.style.setProperty("--pos", e.target.value + "%")
 );
-
-// Barras de habilidade: preenchem ao aparecer na tela
-const barras = document.querySelectorAll(".barras b");
-const encher = (b) => b.style.setProperty("--n", b.dataset.nivel + "%");
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(
-    (ents) =>
-      ents.forEach((e) => {
-        if (e.isIntersecting) {
-          encher(e.target);
-          io.unobserve(e.target);
-        }
-      }),
-    { threshold: 0.4 }
-  );
-  barras.forEach((b) => io.observe(b));
-} else barras.forEach(encher);
