@@ -2,7 +2,6 @@
 const DADOS = {
   nome: "Seu Nome",
   cidade: "Sua cidade",
-  anos: "10+",
   whatsapp: "351900000000", // indicativo do país + número, só dígitos
   email: "seuemail@exemplo.com",
   instagram: "seuperfil", // sem o @
