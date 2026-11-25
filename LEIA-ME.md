@@ -45,3 +45,9 @@ Abra o endereço no **Safari** e toque em **Compartilhar → Adicionar à Tela d
 | `style.css` | Visual (claro e escuro, conforme o sistema) |
 | `_headers` | Cabeçalhos de segurança no Cloudflare |
 | `manifest.webmanifest`, `icons/` | Ícone e instalação na tela de início |
+
+## Portfólio de montagem gráfica
+
+A pasta `portfolio/` tem um site de portfólio separado (serviços e habilidades de acabamento e montagem gráfica). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
+
+Para pôr os seus dados (nome, cidade, WhatsApp, e-mail e Instagram), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os serviços e habilidades ficam em `portfolio/index.html`.
