@@ -175,7 +175,7 @@ a { color: inherit; }
   fill: none; stroke: var(--tinta); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
 }
 .cartao[data-cat="vidros"] svg { background: color-mix(in srgb, var(--c) 16%, #fff); }
-.cartao[data-cat="revestimento"] svg { background: color-mix(in srgb, var(--m) 14%, #fff); }
+.cartao[data-cat="sinaletica"] svg { background: color-mix(in srgb, var(--m) 14%, #fff); }
 .cartao[data-cat="veiculos"] svg { background: color-mix(in srgb, var(--y) 34%, #fff); }
 .cartao[data-cat="eventos"] svg { background: var(--papel-2); }
 .cartao h3 { font-size: 18px; font-weight: 700; }
