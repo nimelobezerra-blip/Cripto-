@@ -3,27 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aplicador de Vinil | Portfólio</title>
-  <meta name="description" content="Aplicador de vinil: películas para vidro, vinil de recorte, decoração de viaturas, montras, stands e móveis.">
-  <meta name="theme-color" content="#14161a">
+  <title>Nicolas Bezerra | Aplicador de Vinil</title>
+  <meta name="description" content="Aplicador de vinil em Lisboa: películas para vidro, vinil de recorte, decoração de viaturas, montras, stands e móveis.">
+  <meta name="theme-color" content="#fafaf9">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portfolio.css?v=202611262234">
-  <script src="portfolio.js?v=202611262234" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css?v=202611262249">
+  <script src="portfolio.js?v=202611262249" defer></script>
 </head>
 <body>
 
   <header class="topo">
     <div class="wrap topo-linha">
-      <a class="marca" href="#inicio">
-        <span class="cmyk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span data-campo="nome">Nicolas Bezerra</span>
-      </a>
+      <a class="marca" href="#inicio" data-campo="nome">Nicolas Bezerra</a>
       <nav class="menu" aria-label="Seções">
         <a href="#servicos">Serviços</a>
         <a href="#trabalhos">Trabalhos</a>
-        <a href="#contato" class="menu-cta">Contato</a>
+        <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
@@ -31,91 +28,81 @@
   <main id="inicio">
 
     <section class="hero">
-      <div class="wrap hero-grade">
-        <div>
-          <p class="sobretitulo">Aplicador de vinil</p>
-          <h1>Vinil bem aplicado<br><span>muda qualquer espaço.</span></h1>
-        </div>
-
-        <div class="mosaico" aria-hidden="true">
-          <span class="corte c1"></span><span class="corte c2"></span><span class="corte c3"></span><span class="corte c4"></span>
-          <img class="m1" src="fotos/stand-p.webp" alt="">
-          <img class="m2" src="fotos/escritorio-depois.webp" alt="">
-          <img class="m3" src="fotos/carro-1-p.webp" alt="">
-          <div class="barra-cores"><i></i><i></i><i></i><i></i></div>
+      <div class="wrap">
+        <p class="rotulo-secao">Aplicador de vinil · Lisboa</p>
+        <h1>Vinil bem aplicado muda qualquer espaço.</h1>
+        <div class="hero-fotos" aria-hidden="true">
+          <img src="fotos/stand-p.webp" alt="">
+          <img src="fotos/escritorio-depois.webp" alt="">
+          <img src="fotos/carro-1-p.webp" alt="">
         </div>
       </div>
     </section>
+
     <section id="servicos" class="secao">
       <div class="wrap">
-        <div class="secao-topo">
-          <p class="sobretitulo">Serviços</p>
+        <header class="secao-topo">
+          <p class="rotulo-secao">01 — Serviços</p>
           <h2>O que eu faço</h2>
           <p>Da medição no local à aplicação, em pequenos trabalhos ou grandes projetos.</p>
-        </div>
+        </header>
 
-        <ul class="cartoes">
-          <li class="cartao" data-cat="vidros">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 10h16M4 15h16"/></svg>
+        <ol class="servicos">
+          <li>
             <h3>Películas para vidro</h3>
             <p>Jateado, fosco e decorativo para divisórias, portas e janelas. Privacidade sem tirar a luz.</p>
           </li>
-          <li class="cartao" data-cat="vidros">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c3-3 6 3 9 0s6 3 9 0M3 14c3-3 6 3 9 0s6 3 9 0"/></svg>
+          <li>
             <h3>Vinil de recorte</h3>
             <p>Formas, logótipos e letras em vinil recortado, aplicados em vidro, parede ou móvel.</p>
           </li>
-          <li class="cartao" data-cat="veiculos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16v-4l2-5h10l4 5h2v4"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          <li>
             <h3>Decoração de viaturas</h3>
             <p>Frotas e carros de empresa em vinil, com logótipo e contactos, total ou parcial.</p>
           </li>
-          <li class="cartao" data-cat="eventos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20V8h14v12M5 8l2-4h10l2 4"/></svg>
+          <li>
             <h3>Stands e eventos</h3>
             <p>Aplicação de vinil em stands, contentores e painéis para feiras, festivais e ativações de marca.</p>
           </li>
-          <li class="cartao" data-cat="eventos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M9 4v16"/><circle cx="15" cy="12" r="3"/></svg>
+          <li>
             <h3>Montras e fachadas</h3>
             <p>Vinil impresso de grande formato em montras, painéis de campanha e fachadas de lojas.</p>
           </li>
-          <li class="cartao" data-cat="eventos">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v3H3zM5 12v8M19 12v8"/></svg>
+          <li>
             <h3>Revestimento de móveis</h3>
             <p>Mesas, balcões e outras peças revestidas com vinil na cor da marca.</p>
           </li>
-          <li class="cartao" data-cat="sinaletica">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h11l3 3-3 3H5z"/></svg>
+          <li>
             <h3>Sinalética em vinil</h3>
             <p>Sinalização em vinil de salas, áreas e percursos em escritórios, hotéis e espaços de eventos.</p>
           </li>
-        </ul>
+        </ol>
       </div>
     </section>
 
-
-    <section class="secao secao-clara">
+    <section class="secao">
       <div class="wrap antes-grade">
-        <div>
-          <p class="sobretitulo">Antes e depois</p>
+        <header class="secao-topo">
+          <p class="rotulo-secao">02 — Antes e depois</p>
           <h2>Privacidade sem perder a luz</h2>
           <p>Arraste a barra para comparar a mesma divisória de escritório antes e depois da aplicação da película jateada.</p>
-        </div>
+        </header>
         <div class="comparar">
           <img src="fotos/escritorio-antes.webp" alt="Divisória de vidro antes, totalmente transparente">
           <img class="depois" src="fotos/escritorio-depois.webp" alt="A mesma divisória depois, com faixa jateada">
-          <span class="rotulo r-antes">Antes</span><span class="rotulo r-depois">Depois</span>
+          <span class="etiqueta e-antes">Antes</span><span class="etiqueta e-depois">Depois</span>
           <span class="divisor" aria-hidden="true"></span>
           <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
         </div>
       </div>
     </section>
+
     <section id="trabalhos" class="secao">
       <div class="wrap">
-        <div class="secao-topo">
+        <header class="secao-topo">
+          <p class="rotulo-secao">03 — Portfólio</p>
           <h2>Trabalhos</h2>
-        </div>
+        </header>
 
         <div class="filtros" role="group" aria-label="Filtrar trabalhos">
           <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
@@ -136,24 +123,24 @@
       </div>
     </section>
 
-
-
-    <section id="contato" class="secao contato">
-      <div class="wrap contato-caixa">
-        <div>
-          <p class="sobretitulo">Contato</p>
+    <section id="contato" class="secao">
+      <div class="wrap contato-grade">
+        <header class="secao-topo">
+          <p class="rotulo-secao">04 — Contato</p>
           <h2>Tem vinil para aplicar?</h2>
           <p>Fale comigo pelo WhatsApp, por telefone ou por e-mail.</p>
-          <ul class="dados-contato">
-            <li><span>Telefone</span><a href="tel:+351937149917">+351 937 149 917</a></li>
-            <li><span>E-mail</span><a href="mailto:nimelobezerra@gmail.com">nimelobezerra@gmail.com</a></li>
-            <li><span>Cidade</span><strong>Lisboa</strong></li>
-          </ul>
-        </div>
-        <div class="contato-acoes">
-          <a class="botao botao-zap" data-link="whatsapp" href="#">Chamar no WhatsApp</a>
-          <a class="botao botao-linha" data-link="email" href="#">Enviar e-mail</a>
-          <a class="botao botao-linha" href="tel:+351937149917">Ligar</a>
+        </header>
+        <div>
+          <dl class="dados-contato">
+            <div><dt>Telefone</dt><dd><a href="tel:+351937149917">+351 937 149 917</a></dd></div>
+            <div><dt>E-mail</dt><dd><a href="mailto:nimelobezerra@gmail.com">nimelobezerra@gmail.com</a></dd></div>
+            <div><dt>Cidade</dt><dd>Lisboa</dd></div>
+          </dl>
+          <div class="contato-acoes">
+            <a class="botao" data-link="whatsapp" href="#">WhatsApp</a>
+            <a class="botao botao-linha" data-link="email" href="#">Enviar e-mail</a>
+            <a class="botao botao-linha" href="tel:+351937149917">Ligar</a>
+          </div>
         </div>
       </div>
     </section>
@@ -161,7 +148,10 @@
   </main>
 
   <footer class="rodape">
-    <div class="wrap">© <span id="ano">2026</span> <span data-campo="nome">Nicolas Bezerra</span> • Aplicador de vinil</div>
+    <div class="wrap rodape-linha">
+      <span>© <span id="ano">2026</span> <span data-campo="nome">Nicolas Bezerra</span></span>
+      <span>Aplicador de vinil · Lisboa</span>
+    </div>
   </footer>
 
   <dialog class="caixa-foto" aria-label="Foto ampliada">
