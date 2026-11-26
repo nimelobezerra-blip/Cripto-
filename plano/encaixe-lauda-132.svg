@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="640" viewBox="0 0 1160 640" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <pattern id="sobra" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#fdecea"/><line x1="0" y1="0" x2="0" y2="10" stroke="#e8a39a" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="1160" height="640" fill="#ffffff"/>
+  <text x="50" y="40" font-size="24" font-weight="bold" fill="#1a2a4a">Encaixe na lauda de vinil – largura 132 cm (escala 1:50)</text>
+  <text x="50" y="66" font-size="14" fill="#555">Sentido de desenrolar da bobina →   |   comprimento total usado: 520 cm</text>
+
+  <!-- lauda (fundo = sobra) -->
+  <rect x="50" y="100" width="1040" height="264" fill="url(#sobra)" stroke="#333" stroke-width="2"/>
+
+  <g stroke="#1a3a7a" stroke-width="2">
+    <rect x="50"  y="100" width="300" height="160" fill="#cfe0f7"/>  <!-- E -->
+    <rect x="350" y="100" width="600" height="70"  fill="#dbe7f7"/>  <!-- A -->
+    <rect x="350" y="170" width="600" height="70"  fill="#dbe7f7"/>  <!-- B -->
+    <rect x="50"  y="294" width="480" height="70"  fill="#d9f0e2"/>  <!-- G -->
+    <rect x="530" y="294" width="420" height="70"  fill="#d9f0e2"/>  <!-- F -->
+    <rect x="950" y="100" width="70"  height="260" fill="#fff1cc"/>  <!-- C -->
+    <rect x="1020" y="100" width="70" height="260" fill="#fff1cc"/>  <!-- D -->
+  </g>
+
+  <g font-size="16" font-weight="bold" fill="#1a3a7a" text-anchor="middle">
+    <text x="200" y="176">E · 150 × 80</text>
+    <text x="650" y="141">A · 300 × 35</text>
+    <text x="650" y="211">B · 300 × 35</text>
+    <text x="290" y="335">G · 240 × 35</text>
+    <text x="740" y="335">F · 210 × 35</text>
+  </g>
+  <g font-size="15" font-weight="bold" fill="#1a3a7a" text-anchor="middle">
+    <text transform="translate(990,230) rotate(-90)">C · 130 × 35</text>
+    <text transform="translate(1060,230) rotate(-90)">D · 130 × 35</text>
+  </g>
+
+  <!-- cotas -->
+  <g stroke="#444" stroke-width="1" fill="none">
+    <line x1="50" y1="385" x2="1090" y2="385"/><line x1="50" y1="378" x2="50" y2="392"/><line x1="1090" y1="378" x2="1090" y2="392"/>
+    <line x1="1110" y1="100" x2="1110" y2="364"/><line x1="1103" y1="100" x2="1117" y2="100"/><line x1="1103" y1="364" x2="1117" y2="364"/>
+  </g>
+  <text x="570" y="405" font-size="15" text-anchor="middle" fill="#222">520 cm</text>
+  <text transform="translate(1135,232) rotate(-90)" font-size="15" text-anchor="middle" fill="#222">132 cm</text>
+
+  <!-- resumo -->
+  <g font-size="15" fill="#222">
+    <rect x="50" y="430" width="1040" height="190" fill="#f6f8fb" stroke="#c5cfdd"/>
+    <text x="70" y="460" font-weight="bold" font-size="17">Aproveitamento</text>
+    <text x="70" y="490">Área da lauda usada: 1,32 m × 5,20 m = <tspan font-weight="bold">6,864 m²</tspan></text>
+    <text x="70" y="515">Área das peças: <tspan font-weight="bold">5,785 m²</tspan></text>
+    <text x="70" y="540">Sobra: <tspan font-weight="bold" fill="#b0392b">1,079 m² (≈ 15,7%)</tspan> → aproveitamento ≈ 84,3%</text>
+    <rect x="70" y="560" width="22" height="16" fill="url(#sobra)" stroke="#999"/>
+    <text x="100" y="573">= sobra (retalho)</text>
+    <text x="560" y="490">• C e D giradas (130 no sentido da largura) – sobram só 2 cm cada.</text>
+    <text x="560" y="515">• E ocupa 80 cm da largura; ao lado, faixa de 35 cm com G e F.</text>
+    <text x="560" y="540">• A e B lado a lado após a peça E.</text>
+    <text x="560" y="565">• Retalho útil: faixa de 27 × 300 cm entre B e F/G.</text>
+  </g>
+</svg>
