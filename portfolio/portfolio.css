@@ -197,6 +197,7 @@ a { color: inherit; }
 .dados-contato { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
 .dados-contato li { display: grid; gap: 2px; }
 .dados-contato span { font-size: 13px; color: var(--tinta-2); }
+.dados-contato strong { font-weight: 600; font-size: 17px; }
 .dados-contato a { font-weight: 600; font-size: 17px; text-decoration: none; overflow-wrap: anywhere; }
 .dados-contato a:hover { color: var(--m); }
 .contato-acoes { display: grid; gap: 12px; }
