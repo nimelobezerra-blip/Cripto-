@@ -50,4 +50,4 @@ Abra o endereço no **Safari** e toque em **Compartilhar → Adicionar à Tela d
 
 A pasta `portfolio/` tem um site de portfólio separado (trabalhos, antes e depois e serviços de aplicação de vinil). Depois de publicado, fica em **/portfolio/** no mesmo endereço do site.
 
-Para pôr os seus dados (nome, cidade, WhatsApp, e-mail e Instagram), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os trabalhos e serviços ficam em `portfolio/index.html`, e as fotos em `portfolio/fotos/` (cada foto tem uma versão grande e uma pequena, terminada em `-p`).
+Para pôr os seus dados (nome, WhatsApp e e-mail), edite só o bloco **EDITE AQUI** no começo de `portfolio/portfolio.js`. Os trabalhos e serviços ficam em `portfolio/index.html`, e as fotos em `portfolio/fotos/` (cada foto tem uma versão grande e uma pequena, terminada em `-p`).

@@ -1,10 +1,8 @@
 // ===== EDITE AQUI os seus dados =====
 const DADOS = {
   nome: "Nicolas Bezerra",
-  cidade: "Sua cidade",
-  whatsapp: "351900000000", // indicativo do país + número, só dígitos
-  email: "seuemail@exemplo.com",
-  instagram: "seuperfil", // sem o @
+  whatsapp: "351937149917", // indicativo do país + número, só dígitos
+  email: "nimelobezerra@gmail.com",
 };
 // ====================================
 
@@ -17,7 +15,6 @@ const msg = encodeURIComponent("Olá! Vi o seu portfólio.");
 const links = {
   whatsapp: `https://wa.me/${DADOS.whatsapp}?text=${msg}`,
   email: `mailto:${DADOS.email}?subject=${encodeURIComponent("Contacto pelo portfólio")}`,
-  instagram: `https://instagram.com/${DADOS.instagram}`,
 };
 document.querySelectorAll("[data-link]").forEach((a) => {
   a.href = links[a.dataset.link];
