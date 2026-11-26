@@ -21,8 +21,8 @@
         <span data-campo="nome">Nicolas Bezerra</span>
       </a>
       <nav class="menu" aria-label="Seções">
-        <a href="#trabalhos">Trabalhos</a>
         <a href="#servicos">Serviços</a>
+        <a href="#trabalhos">Trabalhos</a>
         <a href="#contato" class="menu-cta">Contato</a>
       </nav>
     </div>
@@ -46,49 +46,6 @@
         </div>
       </div>
     </section>
-
-
-    <section class="secao secao-clara">
-      <div class="wrap antes-grade">
-        <div>
-          <p class="sobretitulo">Antes e depois</p>
-          <h2>Privacidade sem perder a luz</h2>
-          <p>Arraste a barra para comparar a mesma divisória de escritório antes e depois da aplicação da película jateada.</p>
-        </div>
-        <div class="comparar">
-          <img src="fotos/escritorio-antes.webp" alt="Divisória de vidro antes, totalmente transparente">
-          <img class="depois" src="fotos/escritorio-depois.webp" alt="A mesma divisória depois, com faixa jateada">
-          <span class="rotulo r-antes">Antes</span><span class="rotulo r-depois">Depois</span>
-          <span class="divisor" aria-hidden="true"></span>
-          <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
-        </div>
-      </div>
-    </section>
-    <section id="trabalhos" class="secao">
-      <div class="wrap">
-        <div class="secao-topo">
-          <h2>Trabalhos</h2>
-        </div>
-
-        <div class="filtros" role="group" aria-label="Filtrar trabalhos">
-          <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
-          <button type="button" class="filtro" data-filtro="montra" aria-pressed="false">Montra</button>
-          <button type="button" class="filtro" data-filtro="privacidade" aria-pressed="false">Película de privacidade</button>
-          <button type="button" class="filtro" data-filtro="espelhada" aria-pressed="false">Película espelhada</button>
-          <button type="button" class="filtro" data-filtro="eventos" aria-pressed="false">Eventos</button>
-          <button type="button" class="filtro" data-filtro="carros" aria-pressed="false">Carros</button>
-          <button type="button" class="filtro" data-filtro="contentor" aria-pressed="false">Contentor</button>
-          <button type="button" class="filtro" data-filtro="moveis" aria-pressed="false">Móveis</button>
-        </div>
-
-        <!-- Para adicionar uma foto: copie esta linha para dentro da lista e troque o nome e a categoria
-        <li data-cat="montra"><button type="button" data-foto="NOME" data-legenda="Legenda"><img src="fotos/NOME-p.webp" alt="Descrição" loading="lazy"><span>Título</span></button></li>
-        -->
-        <ul class="galeria"></ul>
-        <p class="vazio">Fotos em breve.</p>
-      </div>
-    </section>
-
     <section id="servicos" class="secao">
       <div class="wrap">
         <div class="secao-topo">
@@ -136,6 +93,49 @@
         </ul>
       </div>
     </section>
+
+
+    <section class="secao secao-clara">
+      <div class="wrap antes-grade">
+        <div>
+          <p class="sobretitulo">Antes e depois</p>
+          <h2>Privacidade sem perder a luz</h2>
+          <p>Arraste a barra para comparar a mesma divisória de escritório antes e depois da aplicação da película jateada.</p>
+        </div>
+        <div class="comparar">
+          <img src="fotos/escritorio-antes.webp" alt="Divisória de vidro antes, totalmente transparente">
+          <img class="depois" src="fotos/escritorio-depois.webp" alt="A mesma divisória depois, com faixa jateada">
+          <span class="rotulo r-antes">Antes</span><span class="rotulo r-depois">Depois</span>
+          <span class="divisor" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+        </div>
+      </div>
+    </section>
+    <section id="trabalhos" class="secao">
+      <div class="wrap">
+        <div class="secao-topo">
+          <h2>Trabalhos</h2>
+        </div>
+
+        <div class="filtros" role="group" aria-label="Filtrar trabalhos">
+          <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="filtro" data-filtro="montra" aria-pressed="false">Montra</button>
+          <button type="button" class="filtro" data-filtro="privacidade" aria-pressed="false">Película de privacidade</button>
+          <button type="button" class="filtro" data-filtro="espelhada" aria-pressed="false">Película espelhada</button>
+          <button type="button" class="filtro" data-filtro="eventos" aria-pressed="false">Eventos</button>
+          <button type="button" class="filtro" data-filtro="carros" aria-pressed="false">Carros</button>
+          <button type="button" class="filtro" data-filtro="contentor" aria-pressed="false">Contentor</button>
+          <button type="button" class="filtro" data-filtro="moveis" aria-pressed="false">Móveis</button>
+        </div>
+
+        <!-- Para adicionar uma foto: copie esta linha para dentro da lista e troque o nome e a categoria
+        <li data-cat="montra"><button type="button" data-foto="NOME" data-legenda="Legenda"><img src="fotos/NOME-p.webp" alt="Descrição" loading="lazy"><span>Título</span></button></li>
+        -->
+        <ul class="galeria"></ul>
+        <p class="vazio">Fotos em breve.</p>
+      </div>
+    </section>
+
 
 
     <section id="contato" class="secao contato">
