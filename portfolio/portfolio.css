@@ -29,7 +29,8 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(12px); border-bottom: 1px solid var(--linha);
 }
 .topo-linha { display: flex; align-items: center; height: 64px; gap: 28px; }
-.marca { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; text-decoration: none; }
+.marca { display: flex; flex-direction: column; line-height: 1.2; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; text-decoration: none; }
+.marca small { font-size: 12px; font-weight: 400; letter-spacing: 0; color: var(--suave); }
 .menu { display: flex; gap: 28px; font-size: 14px; margin-right: auto; }
 .menu a { text-decoration: none; color: var(--suave); transition: color .2s; }
 .menu a:hover { color: var(--texto); }
