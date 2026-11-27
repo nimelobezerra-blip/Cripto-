@@ -88,3 +88,43 @@ const comp = document.querySelector(".comparar");
 comp.querySelector("input").addEventListener("input", (e) =>
   comp.style.setProperty("--pos", e.target.value + "%")
 );
+
+// Serviços: toque para abrir e ver detalhes
+document.querySelectorAll(".servico button").forEach((b) =>
+  b.addEventListener("click", () => {
+    const li = b.closest(".servico");
+    const abrir = !li.classList.contains("aberto");
+    li.classList.toggle("aberto", abrir);
+    b.setAttribute("aria-expanded", abrir);
+  })
+);
+
+// Faixa em movimento: duplica o conteúdo para o ciclo não ter cortes
+const trilho = document.querySelector(".faixa-trilho");
+if (trilho) trilho.innerHTML += trilho.innerHTML;
+
+// Elementos aparecem ao rolar a página
+document.documentElement.classList.add("js");
+const revelar = document.querySelectorAll(
+  ".secao-topo, .servico, .comparar, .filtros, .vazio, .galeria, .dados-contato, .contato-acoes"
+);
+// Revela tudo o que já entrou na tela ou ficou acima dela (também ao saltar pelo menu)
+revelar.forEach((el, i) => {
+  el.classList.add("revelar");
+  if (el.classList.contains("servico")) el.style.transitionDelay = (i % 7) * 60 + "ms";
+});
+let pendente = false;
+function verificar() {
+  pendente = false;
+  revelar.forEach((el) => {
+    if (!el.classList.contains("visivel") && el.getBoundingClientRect().top < innerHeight - 40) {
+      el.classList.add("visivel");
+      setTimeout(() => (el.style.transitionDelay = ""), 1400);
+    }
+  });
+}
+addEventListener("scroll", () => {
+  if (!pendente) { pendente = true; requestAnimationFrame(verificar); }
+}, { passive: true });
+addEventListener("resize", verificar);
+verificar();
